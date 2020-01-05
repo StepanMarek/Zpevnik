@@ -73,8 +73,9 @@ function createAccords(upperStrings){
     return elem;
 }
 
-function writeResult(twoLines){
-    var resultDiv = document.getElementById("result");
+function writeResult(twoLines, id){
+    var id = id === undefined ? "result" : id;
+    var resultDiv = document.getElementById(id);
     var line = false;
     if(twoLines[0].length > 0){
         line = createAccords(twoLines[0]);
@@ -92,7 +93,19 @@ function clearElement(elem){
     }
 }
 
+function createTitle(){
+    var inputIDs = ["titleInput", "extraInfoInput", "overflowTitleInput", "overflowExtraInfoInput"];
+    var targetIDs = ["title", "extraInfo", "overflowTitle", "overflowExtraInfo"];
+    var input, elem;
+    for(var i = 0; i < inputIDs.length; i++){
+        input = document.getElementById(inputIDs[i]);
+        elem = document.getElementById(targetIDs[i]);
+        elem.innerHTML = input.value;
+    }
+}
+
 function generate(){
+    createTitle();
     var elem = document.getElementById("input");
     clearElement(document.getElementById("result"));
     var text = elem.value;
@@ -101,7 +114,7 @@ function generate(){
     overflowText = "";
     if(text.includes("\\o")){
         resultText = text.substring(0,text.indexOf("\\o"));
-        overflowText = text.substring(text.indexOf("\\o"), text.length);
+        overflowText = text.substring(text.indexOf("\\o")+2, text.length);
     } else {
         resultText = text;
     }
@@ -109,5 +122,10 @@ function generate(){
     for(var i = 0; i < lines.length; i++){
         rewrittenAccords = rewriteAllAccords(lines[i]);
         writeResult(rewrittenAccords);
+    }
+    var lines = overflowText.split("\n");
+    for(var i = 0; i < lines.length; i++){
+        rewrittenAccords = rewriteAllAccords(lines[i]);
+        writeResult(rewrittenAccords, "resultOverflow");
     }
 }

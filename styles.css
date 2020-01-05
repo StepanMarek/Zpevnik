@@ -4,7 +4,7 @@
 .songText {
     font: 11px sans-serif;
 }
-.accords {
+.accords, .extraInfo {
     font: bold 8px sans-serif;
     color: rgb(54,95,145);
 }
@@ -14,9 +14,25 @@
     position: absolute;
     top: 5px;
 }
-#generateButton{
+#titleInput {
     position: absolute;
     top: 710px;
+}
+#extraInfoInput {
+    position: absolute;
+    top: 735px;
+}
+#overflowTitleInput {
+    position: absolute;
+    top: 760px;
+}
+#overflowExtraInfoInput {
+    position: absolute;
+    top: 785px;
+}
+#generateButton{
+    position: absolute;
+    top: 810px;
 }
 #resultWrapper {
     width: 297mm;
@@ -39,6 +55,31 @@
 #resultOverflow {
     left: 162mm;
 }
+.titleBox {
+    background-color: rgb(79,129,189);
+    width: 11cm;
+    position: absolute;
+    top: 2cm;
+    font: bold 15px sans-serif;
+    color: white;
+    -webkit-print-color-adjust: exact;
+}
+#title {
+    left: 25mm;
+}
+#overflowTitle {
+    left: 162mm;
+}
+.extraInfo {
+    position: absolute;
+    top: 2.6cm;
+}
+#extraInfo {
+    left: 25mm;
+}
+#overflowExtraInfo {
+    left: 162mm;
+}
 
 @media print {
     body * {
@@ -51,12 +92,20 @@
         border-style: none;
     }
     #resultWrapper {
-        width: 296mm;
-        height: 209mm;
+        width: 297mm;
+        height: 210mm;
         position: absolute;
         left: 0px;
         top: 0px;
         border-style: none;
+    }
+    .titleBox {
+        background-color: rgb(79,129,189);
+        width: 11cm;
+        position: absolute;
+        top: 2cm;
+        font: bold 15px sans-serif;
+        color: white;
     }
 
     @page{

@@ -6,8 +6,16 @@
     <link rel="stylesheet" href="styles.css">
     <body>
         <textarea id="input"></textarea>
+        <input id="titleInput" type="text">
+        <input id="extraInfoInput" type="text">
+        <input id="overflowTitleInput" type="text">
+        <input id="overflowExtraInfoInput" type="text">
         <input type="button" onclick="generate();" value="Vygenerovat" id="generateButton">
         <div id="resultWrapper">
+            <div id="title" class="titleBox"></div>
+            <div id="extraInfo" class="extraInfo"></div>
+            <div id="overflowTitle" class="titleBox"></div>
+            <div id="overflowExtraInfo" class="extraInfo"></div>
             <div id="result" class="innerResult"></div>
             <div id="resultOverflow" class="innerResult"></div>
         </div>
