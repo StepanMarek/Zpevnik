@@ -108,6 +108,7 @@ function generate(){
     createTitle();
     var elem = document.getElementById("input");
     clearElement(document.getElementById("result"));
+    clearElement(document.getElementById("resultOverflow"));
     var text = elem.value;
     // First, search for overflow mark
     resultText = "";
