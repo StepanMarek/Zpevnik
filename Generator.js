@@ -9,8 +9,8 @@ function surveyForAccords(text){
 }
 
 textMeasurer = document.createElement("canvas").getContext("2d");
-songTextFont = "15px sans-serif";
-accordsTextFont = "15px sans-serif";
+songTextFont = "11px sans-serif";
+accordsTextFont = "bold 8px sans-serif";
 
 function rewriteAccord(line, offset, extraWidthOffset){
     var offset = offset === undefined ? 0 : offset;
@@ -76,7 +76,6 @@ function createAccords(upperStrings){
 function writeResult(twoLines){
     var resultDiv = document.getElementById("result");
     var line = false;
-    console.log(twoLines);
     if(twoLines[0].length > 0){
         line = createAccords(twoLines[0]);
         resultDiv.append(line)
@@ -87,15 +86,28 @@ function writeResult(twoLines){
     resultDiv.append(document.createElement("br"));
 }
 
+function clearElement(elem){
+    while(elem.firstChild){
+        elem.removeChild(elem.firstChild);
+    }
+}
+
 function generate(){
     var elem = document.getElementById("input");
+    clearElement(document.getElementById("result"));
     var text = elem.value;
-    markedLines = surveyForAccords(text);
-    for(var i = 0; i < markedLines.length; i++){
-        if(markedLines[i][1]){
-            rewrittenAccords = rewriteAllAccords(markedLines[i][0]);
-            console.log(rewrittenAccords);
-            writeResult(rewrittenAccords);
-        }
+    // First, search for overflow mark
+    resultText = "";
+    overflowText = "";
+    if(text.includes("\\o")){
+        resultText = text.substring(0,text.indexOf("\\o"));
+        overflowText = text.substring(text.indexOf("\\o"), text.length);
+    } else {
+        resultText = text;
+    }
+    var lines = resultText.split("\n");
+    for(var i = 0; i < lines.length; i++){
+        rewrittenAccords = rewriteAllAccords(lines[i]);
+        writeResult(rewrittenAccords);
     }
 }

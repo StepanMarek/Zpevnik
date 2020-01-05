@@ -6,7 +6,10 @@
     <link rel="stylesheet" href="styles.css">
     <body>
         <textarea id="input"></textarea>
-        <input type="button" onclick="generate();" value="Vygenerovat">
-        <div id="result"></div>
+        <input type="button" onclick="generate();" value="Vygenerovat" id="generateButton">
+        <div id="resultWrapper">
+            <div id="result" class="innerResult"></div>
+            <div id="resultOverflow" class="innerResult"></div>
+        </div>
     </body>
 </html>

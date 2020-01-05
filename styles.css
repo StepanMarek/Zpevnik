@@ -2,8 +2,67 @@
     display: inline-block;
 }
 .songText {
-    font: 15px sans-serif;
+    font: 11px sans-serif;
 }
 .accords {
-    font: 15px sans-serif;
+    font: bold 8px sans-serif;
+    color: rgb(54,95,145);
+}
+#input {
+    width: 600px;
+    height: 700px;
+    position: absolute;
+    top: 5px;
+}
+#generateButton{
+    position: absolute;
+    top: 710px;
+}
+#resultWrapper {
+    width: 297mm;
+    height: 210mm;
+    border-style: solid;
+    position: absolute;
+    left: 650px;
+    top: 5px;
+}
+.innerResult {
+    position: absolute;
+    top: 3cm;
+    width: 11cm;
+    height: 155mm;
+    border-style: solid;
+}
+#result {
+    left: 25mm;
+}
+#resultOverflow {
+    left: 162mm;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    #resultWrapper, #resultWrapper * {
+        visibility: visible;
+    }
+    .innerResult {
+        border-style: none;
+    }
+    #resultWrapper {
+        width: 296mm;
+        height: 209mm;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        border-style: none;
+    }
+
+    @page{
+        margin-left: 0cm;
+        margin-right: 0cm;
+        margin-top: 0cm;
+        margin-bottom: 0cm;
+    }
 }
