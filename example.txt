@@ -1,0 +1,2 @@
+Some example accords {F}placed in the {A}text,
+including a more {F#mi}sophisticated accords.
