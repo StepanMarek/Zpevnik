@@ -6,11 +6,18 @@
     <link rel="stylesheet" href="styles.css">
     <body>
         <textarea id="input"></textarea>
-        <input id="titleInput" type="text">
-        <input id="extraInfoInput" type="text">
-        <input id="overflowTitleInput" type="text">
-        <input id="overflowExtraInfoInput" type="text">
-        <input type="button" onclick="generate();" value="Vygenerovat" id="generateButton">
+        <div id="titleInputContainer">
+            Titul Vlevo : <input id="titleInput" type="text"><br>
+            Podtitul Vlevo : <input id="extraInfoInput" type="text"><br>
+            Titul Vpravo : <input id="overflowTitleInput" type="text"><br>
+            Podtitul Vpravo : <input id="overflowExtraInfoInput" type="text"><br>
+            <input type="button" onclick="generate();" value="Vygenerovat" id="generateButton">
+        </div>
+        <p id="textTutorial">
+            V textu se "{C}X" přepíše na akord C nad písmenem X.
+            Přímé napsání "\o" (bez nového řádku) značí odkud se má začít psát na novou stránku.
+            K exportu bez formulářových prvků stačí zvolit tisk (a pak třeba export do pdf atd.)
+        </p>
         <div id="resultWrapper">
             <div id="title" class="titleBox"></div>
             <div id="extraInfo" class="extraInfo"></div>

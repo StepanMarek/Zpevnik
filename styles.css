@@ -9,30 +9,18 @@
     color: rgb(54,95,145);
 }
 #input {
-    width: 600px;
-    height: 700px;
+    width: 30%;
+    height: 80%;
     position: absolute;
     top: 5px;
 }
-#titleInput {
-    position: absolute;
-    top: 710px;
+#titleInputContainer {
+    position: relative;
+    top : 80%;
 }
-#extraInfoInput {
-    position: absolute;
-    top: 735px;
-}
-#overflowTitleInput {
-    position: absolute;
-    top: 760px;
-}
-#overflowExtraInfoInput {
-    position: absolute;
-    top: 785px;
-}
-#generateButton{
-    position: absolute;
-    top: 810px;
+#textTutorial {
+    position: relative;
+    top: 80%;
 }
 #resultWrapper {
     width: 297mm;
