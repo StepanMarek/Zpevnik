@@ -1,0 +1,107 @@
+.accordsSpacer {
+    display: inline-block;
+}
+.songText {
+    font: 11px sans-serif;
+}
+.accords, .extraInfo {
+    font: bold 8px sans-serif;
+    color: rgb(54,95,145);
+}
+#input {
+    width: 30%;
+    height: 80%;
+    position: absolute;
+    top: 5px;
+}
+#titleInputContainer {
+    position: relative;
+    top : 80%;
+}
+#textTutorial {
+    position: relative;
+    top: 80%;
+}
+#resultWrapper {
+    width: 148mm;
+    height: 210mm;
+    border-style: solid;
+    position: absolute;
+    left: 650px;
+    top: 5px;
+}
+.innerResult {
+    position: absolute;
+    top: 3cm;
+    width: 11cm;
+    height: 155mm;
+    border-style: solid;
+}
+#result {
+    left: 19mm;
+}
+#resultOverflow {
+    left: 162mm;
+    visibility: hidden;
+}
+.titleBox {
+    background-color: rgb(79,129,189);
+    width: 11cm;
+    position: absolute;
+    top: 2cm;
+    font: bold 15px sans-serif;
+    color: white;
+    -webkit-print-color-adjust: exact;
+}
+#title {
+    left: 19mm;
+}
+#overflowTitle {
+    left: 162mm;
+    visibility: hidden;
+}
+.extraInfo {
+    position: absolute;
+    top: 26mm;
+}
+#extraInfo {
+    left: 19mm;
+}
+#overflowExtraInfo {
+    left: 162mm;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    #resultWrapper, #resultWrapper * {
+        visibility: visible;
+    }
+    .innerResult {
+        border-style: none;
+    }
+    #resultWrapper {
+        width: 148mm;
+        height: 210mm;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        border-style: none;
+    }
+    .titleBox {
+        background-color: rgb(79,129,189);
+        width: 11cm;
+        position: absolute;
+        top: 2cm;
+        font: bold 15px sans-serif;
+        color: white;
+    }
+
+    @page{
+        margin-left: 0cm;
+        margin-right: 0cm;
+        margin-top: 0cm;
+        margin-bottom: 0cm;
+    }
+}
