@@ -9,8 +9,8 @@ function surveyForAccords(text){
 }
 
 textMeasurer = document.createElement("canvas").getContext("2d");
-songTextFont = "11px sans-serif";
-accordsTextFont = "bold 8px sans-serif";
+songTextFont = "11px Calibri";
+accordsTextFont = "bold 8px Calibri";
 
 function rewriteAccord(line, offset, extraWidthOffset){
     var offset = offset === undefined ? 0 : offset;
@@ -94,8 +94,10 @@ function clearElement(elem){
 }
 
 function createTitle(){
-    var inputIDs = ["titleInput", "extraInfoInput", "overflowTitleInput", "overflowExtraInfoInput"];
-    var targetIDs = ["title", "extraInfo", "overflowTitle", "overflowExtraInfo"];
+    // var inputIDs = ["titleInput", "extraInfoInput", "overflowTitleInput", "overflowExtraInfoInput"];
+    var inputIDs = ["titleInput", "extraInfoInput"];
+    // var targetIDs = ["title", "extraInfo", "overflowTitle", "overflowExtraInfo"];
+    var targetIDs = ["title", "extraInfo"];
     var input, elem;
     for(var i = 0; i < inputIDs.length; i++){
         input = document.getElementById(inputIDs[i]);
@@ -108,25 +110,25 @@ function generate(){
     createTitle();
     var elem = document.getElementById("input");
     clearElement(document.getElementById("result"));
-    clearElement(document.getElementById("resultOverflow"));
+    // clearElement(document.getElementById("resultOverflow"));
     var text = elem.value;
     // First, search for overflow mark
     resultText = "";
-    overflowText = "";
-    if(text.includes("\\o")){
-        resultText = text.substring(0,text.indexOf("\\o"));
-        overflowText = text.substring(text.indexOf("\\o")+2, text.length);
-    } else {
+    // overflowText = "";
+    // if(text.includes("\\o")){
+    //     resultText = text.substring(0,text.indexOf("\\o"));
+    //     overflowText = text.substring(text.indexOf("\\o")+2, text.length);
+    // } else {
         resultText = text;
-    }
+    // }
     var lines = resultText.split("\n");
     for(var i = 0; i < lines.length; i++){
         rewrittenAccords = rewriteAllAccords(lines[i]);
         writeResult(rewrittenAccords);
     }
-    var lines = overflowText.split("\n");
-    for(var i = 0; i < lines.length; i++){
-        rewrittenAccords = rewriteAllAccords(lines[i]);
-        writeResult(rewrittenAccords, "resultOverflow");
-    }
+    // var lines = overflowText.split("\n");
+    // for(var i = 0; i < lines.length; i++){
+    //     rewrittenAccords = rewriteAllAccords(lines[i]);
+    //     writeResult(rewrittenAccords, "resultOverflow");
+    // }
 }

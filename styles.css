@@ -2,10 +2,10 @@
     display: inline-block;
 }
 .songText {
-    font: 11px sans-serif;
+    font: 11pt Calibri;
 }
 .accords, .extraInfo {
-    font: bold 8px sans-serif;
+    font: bold 8pt Calibri;
     color: rgb(54,95,145);
 }
 #input {
@@ -23,7 +23,7 @@
     top: 80%;
 }
 #resultWrapper {
-    width: 297mm;
+    width: 148mm;
     height: 210mm;
     border-style: solid;
     position: absolute;
@@ -32,43 +32,38 @@
 }
 .innerResult {
     position: absolute;
-    top: 3cm;
-    width: 11cm;
-    height: 155mm;
+    top: 25mm;
+    width: 128mm;
+    height: 175mm;
     border-style: solid;
 }
 #result {
-    left: 25mm;
-}
-#resultOverflow {
-    left: 162mm;
+    left: 10mm;
 }
 .titleBox {
     background-color: rgb(79,129,189);
-    width: 11cm;
+    /* background-color: none; */
+    width: 128mm;
+    height: 15pt;
     position: absolute;
-    top: 2cm;
-    font: bold 15px sans-serif;
+    top: 12mm;
+    font: 11pt Calibri;
+    letter-spacing: 1px;
+    padding-top: 3pt;
     color: white;
     -webkit-print-color-adjust: exact;
+    /* visibility: hidden; */
 }
 #title {
-    left: 25mm;
-}
-#overflowTitle {
-    left: 162mm;
+    left: 10mm;
 }
 .extraInfo {
     position: absolute;
-    top: 2.6cm;
+    top: 13mm;
 }
 #extraInfo {
-    left: 25mm;
+    left: 10mm;
 }
-#overflowExtraInfo {
-    left: 162mm;
-}
-
 @media print {
     body * {
         visibility: hidden;
@@ -80,26 +75,14 @@
         border-style: none;
     }
     #resultWrapper {
-        width: 297mm;
-        height: 210mm;
         position: absolute;
         left: 0px;
         top: 0px;
         border-style: none;
     }
-    .titleBox {
-        background-color: rgb(79,129,189);
-        width: 11cm;
-        position: absolute;
-        top: 2cm;
-        font: bold 15px sans-serif;
-        color: white;
-    }
 
     @page{
-        margin-left: 0cm;
-        margin-right: 0cm;
-        margin-top: 0cm;
-        margin-bottom: 0cm;
+        size: A5;
+        margin: 0;
     }
 }
