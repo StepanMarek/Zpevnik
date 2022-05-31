@@ -1,4 +1,0 @@
-#!/bin/bash
-# Uses mutool to split, then moves the file to new location
-mutool poster -x 2 $1
-mv out.pdf A5/$1
