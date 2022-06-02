@@ -9,8 +9,8 @@ function surveyForAccords(text){
 }
 
 textMeasurer = document.createElement("canvas").getContext("2d");
-songTextFont = "11px sans-serif";
-accordsTextFont = "bold 8px sans-serif";
+songTextFont = "11px Liberation";
+accordsTextFont = "bold 10px Liberation";
 
 function rewriteAccord(line, offset, extraWidthOffset){
     var offset = offset === undefined ? 0 : offset;
