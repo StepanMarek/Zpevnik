@@ -52,7 +52,7 @@
     width: 11cm;
     position: absolute;
     top: 2cm;
-    font: bold 15px sans-serif;
+    font: bold 15px Liberation;
     color: white;
     -webkit-print-color-adjust: exact;
 }
